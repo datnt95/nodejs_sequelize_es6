@@ -1,0 +1,31 @@
+{
+    "authorKey": "Bearer ",
+    "baseUrl": "/backend",
+    "dbConfig": {
+      "host": "127.0.0.1",
+      "userName": "datnguyen",
+      "password": "assets360",
+      "databaseName": "assets360"
+    },
+    "logConfig": {
+      "appenders": {
+        "backend": {
+          "type": "console"
+        },
+        "backend-file": {
+          "type": "file",
+          "filename": "logs/file.log"
+        }
+      },
+      "categories": {
+        "default": {
+          "appenders": [
+            "backend",
+            "backend-file"
+          ],
+          "level": "ALL"
+        }
+      }
+    },
+    "synchronizerUrl": "http://localhost:8889/synchronizer/"
+  }
