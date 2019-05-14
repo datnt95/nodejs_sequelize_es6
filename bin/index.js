@@ -1,7 +1,7 @@
 import app from '../app';
 import http from 'http';
 import log4js from 'log4js';
-
+import models from '../utils/db';
 
 const log = log4js.getLogger();
 /**
@@ -70,8 +70,8 @@ function onListening() {
     'port ' + addr.port;
   log.info('Listening on: ', bind);
 }
-
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+models.sequelize.sync({'force': true}).then(() => {
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+});

@@ -5,7 +5,7 @@
       "host": "127.0.0.1",
       "userName": "datnguyen",
       "password": "assets360",
-      "databaseName": "assets360"
+      "databaseName": "todo_app"
     },
     "logConfig": {
       "appenders": {
@@ -26,6 +26,5 @@
           "level": "ALL"
         }
       }
-    },
-    "synchronizerUrl": "http://localhost:8889/synchronizer/"
-  }
+    }  
+}
