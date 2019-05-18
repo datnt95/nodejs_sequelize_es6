@@ -65,6 +65,14 @@ glob.sync('**/*.model.js', {'realpath': true })
     }
   });
 
+/* Mapping on relationship between each tables */
+
+Object.keys(db).forEach((modelName) => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
 sequelize
   .authenticate()
   .then(() => {
