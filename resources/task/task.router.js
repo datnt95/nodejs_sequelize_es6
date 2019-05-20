@@ -1,16 +1,16 @@
 import { Router } from 'express';
-import { createOne } from './task.controller';
+import { createOne, getOne, getMany, updateOne } from './task.controller';
 const router = Router();
 
-// /api/list
 router
-  .post('/', createOne);
+  .route('/')
+  .post( createOne)
+  .get(getMany);
 
-// /api/list/:id
-// router
-//   .route('/:id')
-//   .get(controllers.getOne)
-//   .put(controllers.updateOne)
+router
+  .route('/:id')
+  .get(getOne)
+  .put(updateOne);
 //   .delete(controllers.removeone);
 
 export default router;

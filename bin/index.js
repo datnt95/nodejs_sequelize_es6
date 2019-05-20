@@ -70,7 +70,7 @@ function onListening() {
     'port ' + addr.port;
   log.info('Listening on: ', bind);
 }
-models.sequelize.sync({'force': true}).then(() => {
+models.sequelize.sync().then(() => {
   server.listen(port);
   server.on('error', onError);
   server.on('listening', onListening);
